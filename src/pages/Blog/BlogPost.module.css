@@ -1,0 +1,117 @@
+/* BlogPost.module.css */
+.pageWrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    max-width: 1000px; /* Limits the width for comfortable reading */
+    min-height: 80vh;
+    margin: 40px auto;
+    padding: 20px;
+    border: 5px double #ccc;
+    border-radius: 5px;
+    /* box-shadow:  5px 5px 25px 4px #ccc; */
+    box-shadow: inset 5px 5px 25px 4px #ccc;
+}
+.postContainer{
+    line-height: 1.8;
+    font-family: 'Georgia', serif;
+    color: #4c4b4a;
+    background: #f4f1ea49;
+    /* background: #eaddcf; */
+    /* background: #fcfaf7; */
+    /* box-shadow: inset 5px 5px 25px 4px #ccc; */
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+}
+.blogImg{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 5px 5px 20px 5px #cbc5c5;
+    
+}
+.sidebar{
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+}
+.postContainer h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.body {
+    font-size: 1.15rem;
+    margin-top: 20px;
+}
+
+.body p::first-letter {
+    font-size: 3.5rem;    
+    font-weight: bold;
+    float: left;          
+    margin-right: 10px;   
+    line-height: 1;      
+    color: #865f43; 
+    font-family: 'Georgia', serif;
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #865f43; /* A rustic brown */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.backLink:hover {
+    color: #5e432f; 
+    text-decoration: underline;
+}
+
+/* The container that creates the dark screen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+}
+
+/* The image inside the overlay */
+.expandedImg {
+    width: 80%; /* 80% of screen width */
+    height: auto;
+    max-height: 90vh; /* Prevents overflow on tall images */
+    object-fit: contain;
+    border-radius: 8px;
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
+}
+
+/* Your existing blog thumbnail class */
+.blogImg {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+
+@media(max-width: 768px){
+    .pageWrapper{
+    grid-template-columns: 1fr;
+    }
+    .sidebar{
+        border-left: none;
+        border-top: 1px solid #ccc;
+        padding: 20px 10px;
+    }
+}

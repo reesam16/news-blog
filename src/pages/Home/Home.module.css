@@ -1,0 +1,105 @@
+/* Home.module.css */
+.container {
+    min-height: 100vh;
+    background-color: #f4f1ea;
+    /* background-color: #ffffff;  */
+    box-shadow: inset 5px 5px 25px 4px #cccccc7b;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 10px auto 0 auto;
+    padding: 20px;
+}
+
+.masthead {
+    grid-column: 1 / span 2;
+    text-align: center;
+    border-bottom: 3px double #2c2c2c;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* This will hold your article list */
+.mainContent {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
+    grid-auto-rows: min-content;
+    grid-auto-flow: dense; 
+    align-items: start;
+    gap: 10px;
+}
+.articleCard{
+    break-inside: avoid;
+    padding: 20px 5px;
+    /* border: 1px solid #ccc; */
+    height: auto;
+    margin-bottom: 30px;
+    /* background: #f1e0d12c; */
+    padding: 20px;
+}
+/* For your "Breaking News" featured article */
+.featuredCard {
+    grid-column: 1 / span 2; /* Spans both columns */
+    padding: 30px;
+    border: 2px solid #2c2c2c5c; /* Slightly bolder border */
+    background: #f8f6f3;
+    font-size: 1.2rem;
+}
+
+/* Weather widget goes here */
+.sidebar {
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+}
+
+.noResults {
+    text-align: center;
+    padding: 50px;
+    border: 1px dashed #555;
+    margin-top: 20px;
+}
+/* Add the button selector to boost specificity */
+button.clearSearch {
+    background-color: #5a5444 !important; 
+    color: #fff !important;
+    border: 2px solid #000 !important;
+    padding: 12px 24px !important;
+    font-family: 'Poratea', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.clearSearch:hover {
+    background-color: #000 !important;
+    color: #fdfcf0 !important;
+}
+
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr; /* Switch to one column on mobile */
+    }
+    
+    .masthead {
+        grid-column: 1; /* Reset the span */
+    }
+    
+    .mainContent {
+        grid-template-columns: 1fr; /* One column for articles */
+    }
+    .featuredCard {
+        grid-column: 1; /* Reset featured card to normal width */
+    }
+    
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,101 @@
+.adminContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; 
+    padding: 40px;
+    max-width: 800px;
+    margin: 20px auto;          
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.editor, .preview {
+    width: 100%;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.formGroup button{
+    all: unset;
+    color: #1a1a1a;
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s ease-in-out;
+}
+button:last-child {
+    background-color: #f0f0f0;
+    color: #333;
+}
+.formGroup button:hover{
+    background: #1a1a1a;
+    color: white;
+}
+
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    
+}
+textarea{
+    height: 200px;
+}
+
+/* Add this to your Admin.module.css */
+.adminContainer h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.preview {
+    display: flex;
+    flex-wrap: wrap; /* This allows the cards to wrap to the next line */
+    gap: 20px;       /* Spacing between the cards */
+}
+
+.previewCard {
+    flex: 1 1 48%;   /* Grow, Shrink, Basis (roughly half width) */
+    min-width: 300px; /* If screen is smaller than 600px, they will wrap to 1 column */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stacks button below text inside card */
+    justify-content: space-between;
+}
+.buttonGroup button{
+    all: unset;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+}
+.buttonGroup button:last-child{
+    color: red;
+}
+.successBox {
+    background-color: #e6fffa;
+    border: 1px solid #b2f5ea;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 768px){
+    .adminContainer{
+        margin: 5px 20px;
+    }
+}

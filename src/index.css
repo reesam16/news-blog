@@ -1,0 +1,21 @@
+/* index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Default body font */
+body {
+  background-color: #f4f1ea; /* Aged paper */
+  color: #2c2c2c;            /* Newspaper ink color */
+  font-family: 'Crimson Text', serif; 
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  /* font-family: 'UnifrakturMaguntia', serif;  */
+  font-family: "Pirata One", system-ui;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+}
