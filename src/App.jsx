@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import BlogPost from './pages/Blog/BlogPost'; //  where you'll build the full view
 import Admin from './pages/Admin/Admin';
 import Footer from './components/Footer/Footer';
+import Contact from './pages/Contact/Contact';
 
 function App() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -17,6 +18,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home searchTerm={searchTerm} />} />
                     <Route path="/blog/:id" element={<BlogPost />} />
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="/admin" element={<Admin />} />
                 </Routes>
 

@@ -1,27 +1,34 @@
 .navbar {
     display: flex;
-    justify-content: space-between; /* Pushes links left, search right */
+    justify-content: space-between; 
     align-items: center;
     padding: 20px 40px;
     border-top: 1px solid #000;
     border-bottom: 3px solid #000;
-    background-color: #fdfcf0; /* Parchment color */
-    position: relative; /* Add this */
-    z-index: 10;
+    background-color: #fdfcf0; 
+    position: relative; 
+    /* z-index: 10; */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+
+.hamburger { 
+    display: none; 
 }
 
 .navLinks {
     display: flex;
     gap: 30px;
-    position: relative; /* Essential for z-index to work */
-    z-index: 100; 
+    position: relative; 
+    align-items: center;
+    /* z-index: 100;  */
+    /* background: red; */
 }
 
 .navLinks a {
     position: relative;
-    z-index: 101; 
+    /* z-index: 101;  */
     cursor: pointer;
     pointer-events: auto; /* Force clickability */
 }
@@ -46,4 +53,33 @@
     display: flex;
     align-items: center;
     z-index: 20; 
+}
+
+@media (max-width: 768px) {
+    .navLinks { 
+        display: none; 
+    } 
+    .searchWrapper{
+        display: none;
+    }
+    .hamburger { 
+        display: block; 
+        background: none; 
+        border: none; 
+        font-size: 2rem; 
+    }
+    
+    .mobileMenu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
 }
