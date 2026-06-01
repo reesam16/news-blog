@@ -1,0 +1,9 @@
+.jokeCard {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #333; 
+    background-color: #eaddc5; 
+    /* border: 1px solid #c9bda5; */
+    text-align: center;
+    font-family: serif; /* Classic newspaper font */
+}

@@ -1,0 +1,25 @@
+.quoteCard {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #333;
+    background-color: #fdfcf0;
+    font-family: 'Georgia', serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.text {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.author {
+    font-weight: 700;
+    font-size: 0.85rem;
+}

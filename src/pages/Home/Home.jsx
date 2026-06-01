@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'; // Added hooks
 import styles from './Home.module.css';
 import WeatherWidget from '../../components/Weather/WeatherWidget';
+import Joke from '../../components/Joke/Joke';
+import History from'../../components/History/History';
+import Quote from '../../components/Quote/Quote';
 import { dummyArticles } from '../../../tempData.js';
 import { Link } from 'react-router-dom';
 
@@ -70,6 +73,9 @@ function Home({ searchTerm }) {
 
             <aside className={styles.sidebar}>
                 <WeatherWidget />
+                <Quote />
+                <Joke />
+                <History />
             </aside>
         </div>
     );
