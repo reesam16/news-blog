@@ -7,19 +7,24 @@ const WeatherWidget = () => {
     useEffect(() => {
         const fetchWeather = async () => {
             const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-           
+            
+            if (!API_KEY) {
+                console.error("API Key is missing! Check your .env file.");
+                return;
+            }
+
             const lat = -37.8; // Matamata, NZ (Hobbiton)
             const lon = 175.7;
-            
+
             try {
                 const response = await fetch(
                     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
                 );
-                
+
                 if (!response.ok) throw new Error('Weather report unavailable');
-                
+
                 const data = await response.json();
-                
+
                 setWeather({
                     temp: Math.round(data.main.temp),
                     condition: data.weather[0].main // e.g., 'Clouds', 'Clear'
