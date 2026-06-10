@@ -7,7 +7,11 @@
 /* Default body font */
 body {
   background-color: #f4f1ea; /* Aged paper */
-  color: #2c2c2c;            /* Newspaper ink color */
+  background: linear-gradient(hsla(0, 0%, 9%, 0.027), hsla(0, 0%, 100%, .2)), url(../src/assets/mapBackground.jpg) no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 20px;
+
+  /* color: #2c2c2c;            Newspaper ink color */
   font-family: 'Crimson Text', serif; 
   line-height: 1.6;
 }
@@ -19,3 +23,7 @@ h1, h2, h3 {
   letter-spacing: 1.5px;
 
 }
+
+/* background: linear-gradient(hsla(0, 0%, 100%, .2), hsla(0, 0%, 100%, .2)), url(../src/assets/mapBackground.jpg) no-repeat;
+background-size: contain;
+padding-top: 30px; */

@@ -1,8 +1,8 @@
 /* Home.module.css */
 .container {
     min-height: 100vh;
-    background-color: #f4f1ea;
-    /* background-color: #ffffff;  */
+    /* background-color: #f4f1ea; */
+    background-color: #f4f1ea47;
     box-shadow: inset 5px 5px 25px 4px #cccccc7b;
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -46,7 +46,8 @@
     grid-column: 1 / span 2; /* Spans both columns */
     padding: 30px;
     border: 2px solid #2c2c2c5c; /* Slightly bolder border */
-    background: #f8f6f3;
+    /* background: #f8f6f3; */
+    background: #f8f6f32d;
     font-size: 1.2rem;
 }
 
