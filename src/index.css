@@ -5,15 +5,37 @@
   box-sizing: border-box;
 }
 /* Default body font */
-body {
-  background-color: #f4f1ea; /* Aged paper */
-  background: linear-gradient(hsla(0, 0%, 9%, 0.027), hsla(0, 0%, 100%, .2)), url(../src/assets/mapBackground.jpg) no-repeat center center fixed;
-  background-size: cover;
+/* body {
+  background-color: #f4f1ea; 
+  background: linear-gradient(hsla(0, 0%, 9%, 0.037), hsla(30, 6%, 86%, 0.91)), url(../src/assets/jaredMap.png) no-repeat center center fixed;
+  background-size: contain;
+  margin: 0 auto;
   padding-top: 20px;
-
-  /* color: #2c2c2c;            Newspaper ink color */
   font-family: 'Crimson Text', serif; 
   line-height: 1.6;
+} */
+body {
+  background-color: #f4f1ea;
+  margin: 0;
+  padding-top: 20px;
+  font-family: 'Crimson Text', serif;
+  line-height: 1.6;
+  position: relative; /* Necessary for the pseudo-element */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../src/assets/jaredMap.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.2; /* Adjust this value (0.0 to 1.0) */
+  z-index: -1; /* Keeps it behind your content */
 }
 
 h1, h2, h3 {
@@ -27,3 +49,12 @@ h1, h2, h3 {
 /* background: linear-gradient(hsla(0, 0%, 100%, .2), hsla(0, 0%, 100%, .2)), url(../src/assets/mapBackground.jpg) no-repeat;
 background-size: contain;
 padding-top: 30px; */
+
+
+@media (max-width: 768px) {
+  body::before{
+    background-size: cover;
+    opacity: 0.16;
+    max-height: 85vh;
+  }
+}
