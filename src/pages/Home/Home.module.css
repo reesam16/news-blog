@@ -2,7 +2,8 @@
 .container {
     min-height: 100vh;
     /* background-color: #f4f1ea; */
-    background-color: #f4f1ea47;
+    /* background-color: #f4f1ea47; */
+    background-color: #f4f1eaa5;
     box-shadow: inset 5px 5px 25px 4px #cccccc7b;
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -11,6 +12,50 @@
     max-width: 1200px;
     margin: 10px auto 0 auto;
     padding: 20px;
+}
+.articleSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pagination {
+    grid-column: 1 / span 2; /* Forces it to span both columns */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.paginationButton {
+    background-color: #5a5444; 
+    color: #fff;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-family: 'Poratea', serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.paginationButton:hover:not(:disabled) {
+    background-color: #000;
+    color: #fdfcf0;
+}
+
+.paginationButton:disabled {
+    background-color: #ccc;
+    border-color: #999;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-family: 'Poratea', serif;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .masthead {
@@ -96,7 +141,20 @@ button.clearSearch:hover {
     .featuredCard {
         grid-column: 1; /* Reset featured card to normal width */
     }
-    
+    .pagination {
+        grid-column: 1; 
+        gap: 10px; 
+        padding: 10px;
+    }
+    .paginationButton {
+        padding: 7px 10px; /* Smaller padding */
+        font-size: 0.75rem; /* Smaller text */
+    }
+
+    .pageInfo {
+        font-size: 0.8rem; /* Slightly smaller text */
+        white-space: nowrap; /* Prevents text from breaking onto two lines */
+    }
     .sidebar {
         border-left: none;
         border-top: 1px solid #ccc;
