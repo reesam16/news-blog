@@ -17,7 +17,7 @@ function Home({ searchTerm }) {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
-    });
+        });
     }, [currentPage]);
 
 
@@ -56,28 +56,70 @@ function Home({ searchTerm }) {
 
             <main >
                 <div className={styles.mainContent}>
-                    {displayArticles.length > 0 ? (
-                        paginatedArticles.map((article, index) => (
-                            <article
-                                key={article.id}
-                                className={index === 0 ? styles.featuredCard : styles.articleCard}
-                            >
-                                {article.imageId && (
+                    {displayArticles.length > 0 && paginatedArticles.length > 0 ? (
+                        <>
+
+                            {/* Featured Article */}
+                            <article className={styles.featuredCard}>
+                                {paginatedArticles[0].imageId && (
                                     <img
-                                        src={`https://picsum.photos/id/${article.imageId}/400/200`}
-                                        alt={article.headline}
-                                        style={{ width: '100%', borderRadius: '8px' }}
+                                        src={`https://picsum.photos/400/200?random=${paginatedArticles[0].id}`}
+                                        alt={paginatedArticles[0].headline}
+                                        className={styles.featuredCardImg}
+                                        loading="lazy"
                                     />
                                 )}
-                                <h2>{article.headline}</h2>
-                                <p className={styles.author}>{article.author} | {article.date}</p>
-                                <p className={styles.body}>
-                                    {/* Check if body exists before substring to avoid errors */}
-                                    {article.body ? article.body.substring(0, 150) : ''}...
-                                </p>
-                                <Link to={`/blog/${article.id}`}>Read Full Article</Link>
+                                <h2>{paginatedArticles[0].headline}</h2>
+                                <p className={styles.author}>{paginatedArticles[0].author} | {paginatedArticles[0].date}</p>
+                                <p className={styles.body}>{paginatedArticles[0].body ? paginatedArticles[0].body.substring(0, 150) : ''}...</p>
+                                <Link to={`/blog/${paginatedArticles[0].id}`}>Read Full Article</Link>
+                                {/* ... rest of your featured content */}
                             </article>
-                        ))
+
+                            {/* THE RED LINE */}
+                            <div className={styles.fullWidthDivider} />
+
+                            {/* Remaining Articles */}
+                            {paginatedArticles.slice(1).map((article) => (
+                                <article key={article.id} className={styles.articleCard}>
+                                    {article.imageId && (
+                                        <img
+                                            src={`https://picsum.photos/400/200?random=${article.id}`}
+                                            alt={article.headline}
+                                            className={styles.articleCardImg}
+                                            loading="lazy"
+                                        />
+                                    )}
+                                    <h2>{article.headline}</h2>
+                                    <p className={styles.author}>{article.author} | {article.date}</p>
+                                    <p className={styles.body}>{article.body ? article.body.substring(0, 150) : ''}...</p>
+                                    <Link to={`/blog/${article.id}`}>Read Full Article</Link>
+                                </article>
+                            ))}
+
+                        </>
+
+                        // paginatedArticles.map((article, index) => (
+                        //     <article
+                        //         key={article.id}
+                        //         className={index === 0 ? styles.featuredCard : styles.articleCard}
+                        //     >
+                        //         {article.imageId && (
+                        //             <img
+                        //                 src={`https://picsum.photos/id/${article.imageId}/400/200`}
+                        //                 alt={article.headline}
+                        //                 style={{ width: '100%', borderRadius: '8px' }}
+                        //             />
+                        //         )}
+                        //         <h2>{article.headline}</h2>
+                        //         <p className={styles.author}>{article.author} | {article.date}</p>
+                        //         <p className={styles.body}>
+                        //             {/* Check if body exists before substring to avoid errors */}
+                        //             {article.body ? article.body.substring(0, 150) : ''}...
+                        //         </p>
+                        //         <Link to={`/blog/${article.id}`}>Read Full Article</Link>
+                        //     </article>
+                        // ))
 
 
                     ) : (
