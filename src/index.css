@@ -19,6 +19,7 @@ body {
   margin: 0;
   padding-top: 20px;
   font-family: 'Crimson Text', serif;
+  white-space: pre-line;
   line-height: 1.6;
   position: relative; /* Necessary for the pseudo-element */
 }
